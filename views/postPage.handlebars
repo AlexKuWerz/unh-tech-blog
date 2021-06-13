@@ -1,0 +1,27 @@
+<h1 class="page-title">{{post.title}}</h1>
+<small class="text-muted">Posted by {{post.user.name}} on {{post.creation_date}}</small>
+<div class="pt-4 mb-4">
+    {{post.text_content}}
+</div>
+{{#if logged_in}}
+    <div class="mb-4">
+        <button type="button" class="btn btn-outline-dark" id="js-leave-comment">Leave a comment</button>
+    </div>
+    <h2 class="h4 mb-3">Post comments:</h2>
+    {{#if post.comments}}
+        {{#each post.comments as |comment|}}
+            <div class="card border-dark mb-2">
+                <div class="card-body text-dark">{{comment.text}}</div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted by {{comment.user.name}} on {{comment.creation_date}}</small>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <div class="text-muted">This post has no comments.</div>
+    {{/if}}
+{{else}}
+    <p class="text-muted">
+        To leave a comment you need to <a href="/login">login</a>
+    </p>
+{{/if}}

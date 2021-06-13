@@ -1,8 +1,8 @@
-<h1 class="page-title mb-3">Posts List</h1>
+<h1 class="page-title mb-5">Posts List</h1>
 
 {{#if posts}}
     {{#each posts as |post|}}
-        <div class="card text-white bg-dark mb-2 post-item">
+        <article class="card text-white bg-dark mb-2 post-item">
             <div class="card-header">
                 <h2 class="post-title">{{post.title}}</h2>
             </div>
@@ -13,8 +13,8 @@
             <div class="card-footer">
                 <small class="text-muted">Posted by {{post.user.name}} on {{post.creation_date}}</small>
             </div>
-        </div>
+        </article>
     {{/each}}
 {{else}}
-    <div class="alert alert-info" role="alert">No posts!</div>
+    <div class="alert alert-dark" role="alert">No posts!</div>
 {{/if}}
