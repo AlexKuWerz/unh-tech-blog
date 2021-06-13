@@ -1,14 +1,12 @@
-<h1 class="page-title mb-5">Posts List</h1>
+<h1 class="page-title mb-4">Posts List</h1>
 
 {{#if posts}}
     {{#each posts as |post|}}
-        <article class="card text-white bg-dark mb-2 post-item">
-            <div class="card-header">
+        <article class="card border-dark mb-3">
+            <div class="card-body text-dark">
                 <h2 class="post-title">{{post.title}}</h2>
-            </div>
-            <div class="card-body">
                 <p class="text-truncate">{{post.text_content}}</p>
-                <a href="/post/{{post.id}}" class="stretched-link text-info">Read more</a>
+                <a href="/post/{{post.id}}" class="stretched-link btn btn-sm btn-outline-dark">Read more</a>
             </div>
             <div class="card-footer">
                 <small class="text-muted">Posted by {{post.user.name}} on {{post.creation_date}}</small>
@@ -16,5 +14,5 @@
         </article>
     {{/each}}
 {{else}}
-    <div class="alert alert-dark" role="alert">No posts!</div>
+    <p class="text-muted">No posts!</p>
 {{/if}}
