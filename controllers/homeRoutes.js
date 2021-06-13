@@ -5,14 +5,16 @@ router.get('/', async (req, res) => {
     try {
         const postsData = await Post.findAll({
             attributes: [
+                'id',
                 'title',
-                ['text_content', 'text'],
+                'text_content',
+                'creation_date',
             ],
             include: [
                 {
                     model: User,
                     attributes: [
-                        ['name', 'author'],
+                        'name',
                     ],
                 },
             ],
@@ -20,8 +22,10 @@ router.get('/', async (req, res) => {
 
         const posts = postsData.map(post => post.get({ plain: true }));
 
-        res.render('homepage', {
-            ...posts,
+        res.render('homePage', {
+            posts: {
+                ...posts,
+            },
             logged_in: req.session.logged_in,
         });
     } catch (err) {

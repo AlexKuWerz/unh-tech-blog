@@ -1,0 +1,8 @@
+.post-item .stretched-link {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+}
+
+.post-item .stretched-link:hover {
+    opacity: .7;
+}
