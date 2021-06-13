@@ -1,0 +1,20 @@
+[
+    {
+        "text": "Test comment text",
+        "creation_date": "2021-06-13",
+        "author_id": "1",
+        "post_id": "2"
+    },
+    {
+        "text": "Another test comment text",
+        "creation_date": "2021-06-13",
+        "author_id": "3",
+        "post_id": "2"
+    },
+    {
+        "text": "Lorem ipsum dolor sit amet",
+        "creation_date": "2021-06-13",
+        "author_id": "1",
+        "post_id": "3"
+    }
+]

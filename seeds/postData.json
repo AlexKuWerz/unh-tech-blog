@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Lorem Ipsum",
+        "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices purus eu diam molestie fringilla. Quisque fringilla mi consectetur velit sodales, id lobortis enim gravida. Morbi fermentum viverra imperdiet. Nunc vitae mi ac augue blandit ultricies. Nulla eget justo id urna bibendum tempus. Donec at venenatis est. Phasellus scelerisque dolor quis auctor molestie.",
+        "creation_date": "2021-06-11",
+        "author_id": 1
+    },
+    {
+        "title": "Lorem ipsum dolor sit amet",
+        "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices purus eu diam molestie fringilla. Quisque fringilla mi consectetur velit sodales, id lobortis enim gravida. Morbi fermentum viverra imperdiet.",
+        "creation_date": "2021-06-12",
+        "author_id": 2
+    },
+    {
+        "title": "Quisque ultrices purus",
+        "text_content": "Quisque ultrices purus eu diam molestie fringilla. Quisque fringilla mi consectetur velit sodales, id lobortis enim gravida. Morbi fermentum viverra imperdiet. Nunc vitae mi ac augue blandit ultricies. Nulla eget justo id urna bibendum tempus. Donec at venenatis est. Phasellus scelerisque dolor quis auctor molestie.",
+        "creation_date": "2021-06-12",
+        "author_id": 2
+    },
+    {
+        "title": "Quisque fringilla mi consectetur",
+        "text_content": "Quisque fringilla mi consectetur velit sodales, id lobortis enim gravida. Morbi fermentum viverra imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices purus eu diam molestie fringilla.",
+        "creation_date": "2021-06-13",
+        "author_id": 3
+    }
+]
