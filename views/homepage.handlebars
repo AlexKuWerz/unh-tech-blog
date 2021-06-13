@@ -1,0 +1,21 @@
+<section class="container-lg">
+    <h1>Homepage</h1>
+
+    {{#if posts}}
+        <ul class="posts-list">
+        {{#each posts as |post|}}
+            <li class="post-item">
+                <div class="post-header">
+                    <h2 class="post-title">{{post.title}}</h2>
+                    <p class="post-author">{{post.author}}</p>
+                </div>
+                <div class="post-body">
+                    <p class="post-text">{{post.text}}</p>
+                </div>
+            </li>
+        {{/each}}
+        </ul>
+    {{else}}
+        <p class="message">No posts!</p>
+    {{/if}}
+</section>
