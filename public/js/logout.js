@@ -9,16 +9,16 @@ const logoutHandler = async (event) => {
             'Content-Type': 'application/json',
         },
     });
-    
+
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/login');
     } else {
         alert(response.statusText);
     }
 };
 
-const init = () => {
-    document.getElementById('js-logout-link').addEventListener('click', logoutHandler);
+const initLogout = () => {
+    document.querySelector('#js-logout-link').addEventListener('click', logoutHandler);
 }
 
-init();
+initLogout();

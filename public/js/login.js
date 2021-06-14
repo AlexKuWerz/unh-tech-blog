@@ -3,8 +3,8 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-    const email = document.getElementById('login-email').value.trim();
-    const password = document.getElementById('login-password').value.trim();
+    const email = document.querySelector('#login-email').value.trim();
+    const password = document.querySelector('#login-password').value.trim();
 
     if (email && password) {
         const response = await fetch('/api/users/login', {
@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
             const resData = await response.json();
 
@@ -66,14 +66,14 @@ const signupFormHandler = async (event) => {
 };
 
 const toggleBlocks = () => {
-    document.getElementById('js-login-block').classList.toggle('d-none');
-    document.getElementById('js-signup-block').classList.toggle('d-none');
+    document.querySelector('#js-login-block').classList.toggle('d-none');
+    document.querySelector('#js-signup-block').classList.toggle('d-none');
 };
 
-const init = () => {
-    document.getElementById('js-login-form').addEventListener('submit', loginFormHandler);
-    document.getElementById('js-signup-form').addEventListener('submit', signupFormHandler);
+const initLogin = () => {
+    document.querySelector('#js-login-form').addEventListener('submit', loginFormHandler);
+    document.querySelector('#js-signup-form').addEventListener('submit', signupFormHandler);
     document.querySelectorAll('.js-block-toggle').forEach(elem => elem.addEventListener('click', toggleBlocks));
 };
 
-init();
+initLogin();
