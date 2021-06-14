@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
             };
         }
 
-        res.render('homePage', options);
+        res.render('homepage', options);
     } catch (err) {
         res.status(500).json(err);
     }
