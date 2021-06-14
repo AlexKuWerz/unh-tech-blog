@@ -22,12 +22,17 @@ router.get('/', async (req, res) => {
 
         const userPosts = userPostsData.map(post => post.get({ plain: true }));
 
-        res.render('dashboardPage', {
-            posts: {
-                ...userPosts,
-            },
+        const options = {
             logged_in: req.session.logged_in,
-        });
+        };
+
+        if (userPosts.length) {
+            options.posts = {
+                ...userPosts,
+            };
+        }
+
+        res.render('dashboardPage', options);
     } catch (err) {
         res.status(500).json(err);
     }

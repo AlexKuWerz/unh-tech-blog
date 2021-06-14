@@ -24,7 +24,8 @@
                 <h2 class="post-title">{{post.title}}</h2>
                 <p class="text-truncate">{{post.text_content}}</p>
                 <div class="">
-                    <a href="/post/{{post.id}}" class="btn btn-sm btn-outline-dark">View post</a>
+                    <a href="/post/{{post.id}}" class="btn btn-sm btn-outline-dark">View Post</a>
+                    <button class="btn btn-sm btn-outline-dark js-delete-post-btn" data-post-id="{{post.id}}">Delete Post</button>
                 </div>
             </div>
         </article>
