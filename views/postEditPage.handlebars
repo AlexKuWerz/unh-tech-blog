@@ -1,0 +1,18 @@
+<h1 class="page-title mb-4">Edit Post</h1>
+
+<form class="mb-4" id="js-edit-post-form">
+    <input type="hidden" id="post-id" name="post-id" value="{{post.id}}" readonly>
+    <div class="mb-3">
+        <label for="post-title" class="form-label">Post Title</label>
+        <input type="text" class="form-control" id="post-title" name="post-title" value="{{post.title}}" required>
+    </div>
+    <div class="mb-3">
+        <label for="post-text" class="form-label">Post Text</label>
+        <textarea class="form-control" id="post-text" name="post-text" rows="3" required>{{post.text_content}}</textarea>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-outline-dark" type="submit">Apply Changes</button>
+    </div>
+</form>
+
+<script src="/js/post.js"></script>

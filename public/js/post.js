@@ -1,21 +1,18 @@
 'use strict';
 
-const newCommentFormToggle = () => {
-    document.querySelector('#js-new-comment-form').classList.toggle('d-none');
-};
-
-const newCommentFormHandler = async (event) => {
+const editPostFormHandler = async (event) => {
     event.preventDefault();
 
-    const text = document.querySelector('#comment-text').value.trim();
+    const title = document.querySelector('#post-title').value.trim();
+    const text = document.querySelector('#post-text').value.trim();
     const post_id = parseInt(document.querySelector('#post-id').value.trim(), 10);
 
-    if (text && post_id) {
-        const response = await fetch(`/api/posts/comment`, {
-            method: 'POST',
+    if (title && text && post_id) {
+        const response = await fetch(`/api/posts/${post_id}`, {
+            method: 'PUT',
             body: JSON.stringify({
+                title,
                 text,
-                post_id,
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -23,9 +20,8 @@ const newCommentFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.querySelector('#js-new-comment-form').classList.add('d-none');
-            alert('New comment created!');
-            document.location.reload();
+            alert('Post updated!');
+            document.location.replace(`/post/${post_id}`);
         } else {
             const resData = await response.json();
 
@@ -35,8 +31,7 @@ const newCommentFormHandler = async (event) => {
 };
 
 const initPost = () => {
-    document.querySelector('#js-add-comment').addEventListener('click', newCommentFormToggle);
-    document.querySelector('#js-new-comment-form').addEventListener('submit', newCommentFormHandler);
+    document.querySelector('#js-edit-post-form').addEventListener('submit', editPostFormHandler);
 };
 
 initPost();

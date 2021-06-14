@@ -57,4 +57,34 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const foundPost = await Post.findByPk(req.params.id);
+
+        if (!foundPost) {
+            res.status(404).json({
+                message: 'Post with this id not found!',
+            });
+
+            return;
+        }
+
+        const updatedPostData = {
+            title: req.body.title,
+            text_content: req.body.text,
+            author_id: req.session.user_id,
+        };
+
+        const updatedPost = await Post.update(updatedPostData, {
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        res.status(200).json(updatedPost);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 module.exports = router;
