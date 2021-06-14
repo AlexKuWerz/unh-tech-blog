@@ -7,8 +7,18 @@
 </div>
 {{#if logged_in}}
     <div class="mb-4">
-        <button type="button" class="btn btn-outline-dark" id="js-leave-comment">Leave a comment</button>
+        <button type="button" class="btn btn-outline-dark" id="js-add-comment">New Comment</button>
     </div>
+    <form class="mb-4 d-none" id="js-new-comment-form">
+        <input type="hidden" id="post-id" name="post-id" value="{{post.id}}" readonly>
+        <div class="mb-3">
+            <label for="comment-text" class="form-label">Comment Text</label>
+            <textarea class="form-control" id="comment-text" name="comment-text" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-outline-dark" type="submit">Add New Comment</button>
+        </div>
+    </form>
     <h2 class="h4 mb-3">Post comments:</h2>
     {{#if post.comments}}
         {{#each post.comments as |comment|}}
@@ -22,6 +32,8 @@
     {{else}}
         <p class="text-muted">This post has no comments.</p>
     {{/if}}
+
+    <script src="/js/post.js"></script>
 {{else}}
     <p class="text-muted">To leave a comment you need to <a href="/login">login</a></p>
 {{/if}}
