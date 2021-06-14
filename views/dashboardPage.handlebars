@@ -1,0 +1,36 @@
+<h1 class="page-title mb-4">Dashboard</h1>
+<div class="d-flex justify-content-between mb-4">
+    <h2 class="h4">Your posts</h2>
+    <button type="button" class="btn btn-outline-dark" id="js-new-post-btn">New Post</button>
+</div>
+<form class="mb-4 d-none" id="js-new-post-form">
+    <div class="mb-3">
+        <label for="post-title" class="form-label">Post Title</label>
+        <input type="text" class="form-control" id="post-title" name="post-title" required>
+    </div>
+    <div class="mb-3">
+        <label for="post-text" class="form-label">Post text</label>
+        <textarea class="form-control" id="post-text" name="post-text" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-outline-dark" type="submit">Add New Post</button>
+    </div>
+</form>
+
+{{#if posts}}
+    {{#each posts as |post|}}
+        <article class="card border-dark mb-3">
+            <div class="card-body text-dark">
+                <h2 class="post-title">{{post.title}}</h2>
+                <p class="text-truncate">{{post.text_content}}</p>
+                <div class="">
+                    <a href="/post/{{post.id}}" class="btn btn-sm btn-outline-dark">View post</a>
+                </div>
+            </div>
+        </article>
+    {{/each}}
+{{else}}
+    <p class="text-muted">You have no posts!</p>
+{{/if}}
+
+<script src="/js/dashboard.js"></script>
